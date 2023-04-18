@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body,
+html {
+  background:#132741;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.bounce-2x {
+  animation: scaleY 1s ease-in-out;
+}
+.btn{
+  background-color: #132742;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.savvedlink{
+  width: 550px;
+}
+.modal{
+  width: 550px;
+  transform: translateY(300px);
+}
+
+.amimation{
+  transform: translateY(0px);
+}
+.hide{
+  visibility: hidden;
+  transform: translateY(300px);
+}
+.progress{
+  border-radius: 15px;
+}
+
+::-webkit-progress-value {
+  background-color: #0e4792;
+  transition: all ease-in-out 1.5s;
+}
+
+@keyframes scaleY{
+  from{
+      transform: translateY(30px);
+  }
+  to{
+      transform: translateY(0px);
+
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (max-width:640px) {
+  .savvedlink{
+    width: 80vw;
+  }
+  
 }
